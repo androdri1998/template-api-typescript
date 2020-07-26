@@ -53,9 +53,15 @@ class DatabaseRepository {
     const DatabaseInstance = new Database();
     const connection = await DatabaseInstance.getConnection();
 
-    const response = await func(connection);
+    let response;
+    try {
+      response = await func(connection);
+      await connection.end();
+    } catch (err) {
+      await connection.end();
+      throw err;
+    }
 
-    await connection.end();
     return response;
   }
 
