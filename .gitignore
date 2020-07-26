@@ -1,0 +1,14 @@
+node_modules
+
+database.sqlite
+.env.test
+.env.dev
+.env.prod
+
+docker-compose.yml
+
+database.sqlite
+
+coverage/
+
+dist
