@@ -1,9 +1,7 @@
 {
-  "name": "setting-connection-database-tdd",
+  "name": "template-api-typescript",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/androdri1998/setting-connection-database-tdd.git",
-  "author": "André Rodrigues <andre.rodrigues98@outlook.com>",
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=prod node ./dist/index.js",
