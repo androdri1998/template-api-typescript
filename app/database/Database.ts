@@ -1,12 +1,16 @@
-import mysql from "promise-mysql";
+import mysql from 'promise-mysql';
 
-import processConsts from "../utils/process-consts";
+import processConsts from '../utils/process-consts';
 
 class Database {
   private host: string | undefined;
+
   private user: string | undefined;
+
   private password: string | undefined;
+
   private database: string | undefined;
+
   private port: number | undefined;
 
   constructor() {
@@ -28,6 +32,23 @@ class Database {
     });
 
     return connection;
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public async executeWithDatabase(func: (CONN: any) => any): Promise<any> {
+    const connection = await this.getConnection();
+
+    let response;
+    try {
+      response = await func(connection);
+      await connection.end();
+    } catch (err) {
+      await connection.end();
+      throw err;
+    }
+
+    return response;
   }
 }
 

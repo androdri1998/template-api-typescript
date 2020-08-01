@@ -1,14 +1,15 @@
-import { stages } from "./configs";
+import { stages } from './configs';
 
 export default class Helpers {
-  getPathEnv(environment: string): string {
+  // eslint-disable-next-line class-methods-use-this
+  public getPathEnv(environment: string): string {
     let path;
     if (environment === stages.DEV) {
-      path = ".env.dev";
+      path = '.env.dev';
     } else if (environment === stages.PROD) {
-      path = ".env.prod";
+      path = '.env.prod';
     } else {
-      path = ".env.test";
+      path = '.env.test';
     }
 
     return path;

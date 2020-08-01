@@ -1,5 +1,5 @@
-import { databaseTables } from "../utils/configs";
-import { IInsertsSqls } from "./inserts-types";
+import { databaseTables } from '../utils/configs';
+import { IInsertsSqls } from './inserts-types';
 
 const insertsSqls: IInsertsSqls = {
   INSERT_VERSION_MIGRATE: `INSERT INTO

@@ -1,4 +1,5 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from 'express';
+
 interface Error {
   message: string;
   name: string;
@@ -10,15 +11,16 @@ const errorMiddleware = () => (
   err: Error,
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
+  // eslint-disable-next-line no-console
   console.log(err);
   const status = err.status || 500;
 
   if (status >= 500) {
     res
       .status(status)
-      .json({ error: "InternalError", error_description: "Internal Error" });
+      .json({ error: 'InternalError', error_description: 'Internal Error' });
   }
   res
     .status(status)

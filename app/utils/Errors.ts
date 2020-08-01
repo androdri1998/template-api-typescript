@@ -1,11 +1,12 @@
-import HTTPStatusCode from "http-status-codes";
+/* eslint-disable max-classes-per-file */
+import HTTPStatusCode from 'http-status-codes';
 
 export class CustomConflictError extends Error {
   public status: number;
 
-  constructor(message = "Item already created") {
+  constructor(message = 'Item already created') {
     super(message);
-    this.name = "Conflict error";
+    this.name = 'Conflict error';
     this.message = message;
     this.status = HTTPStatusCode.CONFLICT;
   }
@@ -14,9 +15,9 @@ export class CustomConflictError extends Error {
 export class CustomBadRequestError extends Error {
   public status: number;
 
-  constructor(message = "Error in parameters") {
+  constructor(message = 'Error in parameters') {
     super(message);
-    this.name = "BadRequest error";
+    this.name = 'BadRequest error';
     this.message = message;
     this.status = HTTPStatusCode.BAD_REQUEST;
   }
@@ -25,9 +26,9 @@ export class CustomBadRequestError extends Error {
 export class CustomUnauthorizedError extends Error {
   public status: number;
 
-  constructor(message = "Unauthorized") {
+  constructor(message = 'Unauthorized') {
     super(message);
-    this.name = "Unauthorized error";
+    this.name = 'Unauthorized error';
     this.message = message;
     this.status = HTTPStatusCode.UNAUTHORIZED;
   }
@@ -36,9 +37,9 @@ export class CustomUnauthorizedError extends Error {
 export class CustomNotFoundError extends Error {
   public status: number;
 
-  constructor(message = "Not found") {
+  constructor(message = 'Not found') {
     super(message);
-    this.name = "Not Found error";
+    this.name = 'Not Found error';
     this.message = message;
     this.status = HTTPStatusCode.NOT_FOUND;
   }

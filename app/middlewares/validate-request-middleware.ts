@@ -1,11 +1,12 @@
-import { Request, Response, NextFunction } from "express";
-import { CustomBadRequestError } from "../utils/Errors";
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { Request, Response, NextFunction } from 'express';
+import { CustomBadRequestError } from '../utils/Errors';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default (schema: any, scope: string) => async (
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): Promise<any> => {
   try {

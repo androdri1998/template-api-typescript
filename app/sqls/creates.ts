@@ -1,5 +1,5 @@
-import { databaseTables } from "../utils/configs";
-import { ICreatesSqls } from "./creates-types";
+import { databaseTables } from '../utils/configs';
+import { ICreatesSqls } from './creates-types';
 
 const createSqls: ICreatesSqls = {
   CREATE_TABLE_MIGRATE_VERSIONS: `

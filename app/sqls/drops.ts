@@ -1,5 +1,5 @@
-import { databaseTables } from "../utils/configs";
-import { IDropsSqls } from "./drops-types";
+import { databaseTables } from '../utils/configs';
+import { IDropsSqls } from './drops-types';
 
 const dropsSqls: IDropsSqls = {
   DROP_TABLE_MIGRATE_VERSIONS: `
